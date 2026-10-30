@@ -31,5 +31,4 @@ Learning Linux, Git, cloud computing and DevOps through hands-on projects.
   3. Wrote a bash script in the User Data field to update the OS, install Apache (httpd), start the service, and create a custom index.html page.
   4. Successfully verified the web server was running by accessing the EC2 Public IPv4 address.
 - *Key Learning:* Learned how to automate server provisioning and configuration, eliminating the need for manual SSH setup
--![EC2 Web Server Output]
- (ec2-hello-world.png)
+- ![EC2 Web Server Output](ec2-hello-world.png)
