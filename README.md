@@ -32,3 +32,13 @@ Learning Linux, Git, cloud computing and DevOps through hands-on projects.
   4. Successfully verified the web server was running by accessing the EC2 Public IPv4 address.
 - *Key Learning:* Learned how to automate server provisioning and configuration, eliminating the need for manual SSH setup
 - ![EC2 Web Server Output](ec2-hello-world.png)
+
+  ## Project 4: IAM (Identity and Access Management) Security
+- *Date:* 30/10/2026
+- *Goal:* Secure the AWS account by creating a dedicated IAM user with administrative privileges, abandoning the insecure Root account for daily tasks.
+- *What I did:* 
+  1. Navigated to the IAM console.
+  2. Created a new IAM user with Console access enabled.
+  3. Attached the AdministratorAccess policy to the user.
+  4. Logged in via the IAM-specific sign-in URL in an incognito window to verify access.
+- *Key Learning:* Learned why the Root account should not be used for daily tasks and how to securely onboard users.
