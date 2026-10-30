@@ -1,12 +1,15 @@
-#Cloud-DevOps-learning
-##Project 1:Static File Hosting onAWS S3
-**Date:**29/10/2026
-**Goal:**Learn into the AWS Console.
-**What I did:**
-1. Logged into the AWS console.
-2. Created a new S3 bucket in the 'ap-south-1' region.
-3. Uploaded a test file.
-4. Retrived the Object URL to verify it was accessible.
+# Cloud-DevOps-learning
+
+Learning Linux, Git, cloud computing and DevOps through hands-on projects.
+
+## Project 1: Static File Hosting on AWS S3
+- *Date:* 29/10/2026
+- *Goal:* Learn how to host a file in the cloud.
+- *What I did:* 
+  1. Logged into the AWS Console.
+  2. Created a new S3 bucket in the ap-south-1 (Mumbai) region.
+  3. Uploaded a test file.
+  4. Retrieved the Object URL to verify it was accessible.
 
 ## Project 2: Static Website Hosting on AWS S3
 - *Date:* 29/10/26
