@@ -33,12 +33,22 @@ Learning Linux, Git, cloud computing and DevOps through hands-on projects.
 - *Key Learning:* Learned how to automate server provisioning and configuration, eliminating the need for manual SSH setup
 - ![EC2 Web Server Output](ec2-hello-world.png)
 
-  ## Project 4: IAM (Identity and Access Management) Security
+  ## Project 4: IAM (Identity and Access Management) Security & Access Control
 - *Date:* 30/10/2026
-- *Goal:* Secure the AWS account by creating a dedicated IAM user with administrative privileges, abandoning the insecure Root account for daily tasks.
+- *Goal:* Secure the AWS account by creating a dedicated IAM user, and understand how IAM policies control access to AWS resources using the Principle of Least Privilege.
 - *What I did:* 
-  1. Navigated to the IAM console.
-  2. Created a new IAM user with Console access enabled.
-  3. Attached the AdministratorAccess policy to the user.
-  4. Logged in via the IAM-specific sign-in URL in an incognito window to verify access.
-- *Key Learning:* Learned why the Root account should not be used for daily tasks and how to securely onboard users.
+  1. Created a new IAM user (Amrutha-Admin) with Console access and attached the AdministratorAccess policy.
+  2. Logged in via the IAM-specific sign-in URL in an incognito window to verify access, abandoning the Root account for daily tasks.
+  3. Created a second user (Test-User) with *no policies attached*.
+  4. Logged in as Test-User and attempted to view S3 buckets. Successfully triggered an "Access Denied" error, proving the user had zero permissions.
+  5. Attached the AmazonS3FullAccess policy to Test-User, but discovered a new error: the user still couldn't list buckets because they lacked the s3:ListAllMyBuckets account-level permission.
+  6. Escalated Test-User to AdministratorAccess to bypass the limitation and successfully created an S3 bucket.
+- *Key Learning:* Demonstrated how AWS evaluates IAM policies to allow or deny actions. Learned that service-specific policies (like AmazonS3FullAccess) sometimes aren't enough if the user lacks broader account-level permissions. Also learned the importance of deleting test users to close security holes.
+
+  ### Troubleshooting Evidence
+*1. Access Denied (Before Permissions):*
+![Access Denied](access-denied.png)
+
+*2. Access Granted (After Admin Permissions):*
+![Access Granted](access-granted.png)
+
