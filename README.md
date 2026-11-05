@@ -95,3 +95,20 @@ Learning Linux, Git, cloud computing and DevOps through hands-on projects.
   6. Verified the successful run (green checkmark) via the GitHub Actions tab.
      
 - *Key Learning:* Learned the basics of YAML syntax, how to read GitHub Actions logs to debug failures, and how CI/CD pipelines automate the testing of code.
+
+  ## Project 9: Secure Database with Amazon RDS
+  
+- *Date:* 5/11/2026
+- *Goal:* Provision a managed MySQL database in a private subnet to understand secure database architecture and network isolation.
+- 
+- *What I did:*
+  1. Created an Amazon RDS MySQL database (db.t3.micro) using the Free Tier template and Single-AZ deployment.
+  2. Placed the database inside the custom My-Custom-VPC.
+  3. *Troubleshooting:* Initially hit a "No default subnet detected" error. Resolved this by creating a *DB Subnet Group* spanning two Availability Zones (ap-south-1a and ap-south-1b).
+  4. Encountered a CIDR overlap error while creating the second subnet; fixed it by assigning a new CIDR block (10.0.3.0/24) to the private subnet.
+  5. Set *Public access to "No"* and attached a new security group, ensuring the database cannot be reached from the internet.
+  6. Deleted the database immediately after verifying the configuration to avoid charges.
+- *Key Learning:* Learned why databases must be isolated in private subnets and how RDS uses DB Subnet Groups to span multiple Availability Zones for high availability.
+
+### RDS Configuration Screenshot
+![RDS Database](rds-screenshot.png)
