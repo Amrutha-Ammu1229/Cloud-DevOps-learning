@@ -52,3 +52,18 @@ Learning Linux, Git, cloud computing and DevOps through hands-on projects.
 *2. Access Granted (After Admin Permissions):*
 ![Access Granted](access-granted.png)
 
+
+## Project 6: Verifying Custom VPC Connectivity
+*Date:* 5/11/2026
+*Goal:* Prove that the custom VPC, Public Subnet, and Route Table routing are configured correctly by launching a server and pinging it from the public internet.
+*What I did:*
+  1. Launched an EC2 instance (VPC-Test-Server) inside the custom My-Custom-VPC and selected the Public-Subnet.
+  2. Ensured a Public IPv4 address was automatically assigned to the instance.
+  3. Created a Security Group allowing SSH (port 22) and All ICMP - IPv4 traffic.
+  4. Connected to the instance's Public IPv4 address using the ping command from my local Windows Command Prompt.
+  5. Verified successful packet transfer (0% loss), proving the Internet Gateway and custom Route Table were functioning perfectly.
+  6. Terminated the instance to avoid billing.
+*Key Learning:* Validated that AWS networking functions exactly like physical networking. Without a Route Table pointing to an Internet Gateway, instances remain isolated. This project proved the end-to-end flow of internet traffic into a custom cloud network.
+
+### Proof of VPC Connectivity
+![Ping Successful](ping-success.png)
