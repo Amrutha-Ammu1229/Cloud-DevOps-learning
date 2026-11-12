@@ -126,4 +126,8 @@ Learning Linux, Git, cloud computing and DevOps through hands-on projects.
 - *Key Learning:* Learned how to decouple architecture components. The Load Balancer acts as a single point of contact for users, while the Auto Scaling Group ensures server capacity adapts automatically.
 
 ### Proof of High Availability
-![Load Balancer Working](alb-screenshot.png)
+Load Balancer routing traffic to one server:
+![Load Balancer Server 1](alb-screenshot.png)
+
+Load Balancer routing the refresh to a *different* server:
+![Load Balancer Server 2](alb-load-balancing.png)
