@@ -1,5 +1,3 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0664c555-d2bd-44c0-ac90-1a23db8181dc" /># Cloud-DevOps-learning
-
 Learning Linux, Git, cloud computing and DevOps through hands-on projects.
 
 ## Project 1: Static File Hosting on AWS S3
