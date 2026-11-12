@@ -1,4 +1,4 @@
-# Cloud-DevOps-learning
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0664c555-d2bd-44c0-ac90-1a23db8181dc" /># Cloud-DevOps-learning
 
 Learning Linux, Git, cloud computing and DevOps through hands-on projects.
 
@@ -112,3 +112,20 @@ Learning Linux, Git, cloud computing and DevOps through hands-on projects.
 
 ### RDS Configuration Screenshot
 ![RDS Database](rds-screenshot.png)
+
+
+## Project 10: High Availability Architecture (ALB + Auto Scaling)
+
+- *Date:* 12/11/2026
+- *Goal:* Build a highly available, fault-tolerant web application that automatically scales based on demand.
+- 
+- *What I did:*
+  1. Created a Launch Template with a User Data script to install Apache and display the server hostname.
+  2. Created a Target Group and an Internet-facing Application Load Balancer (ALB) across multiple Availability Zones.
+  3. Created an Auto Scaling Group (min 1, max 4) attached to the ALB.
+  4. Verified load balancing by refreshing the ALB DNS and observing the hostname change.
+  5. *Troubleshooting:* Encountered an "Unhealthy" target because the Auto Scaling Group placed an instance in the Private Subnet, which lacks a NAT Gateway to respond to health checks. Resolved by reconfiguring the Auto Scaling Group to use only the Public Subnet.
+- *Key Learning:* Learned how to decouple architecture components. The Load Balancer acts as a single point of contact for users, while the Auto Scaling Group ensures server capacity adapts automatically.
+
+### Proof of High Availability
+![Load Balancer Working](alb-screenshot.png)
