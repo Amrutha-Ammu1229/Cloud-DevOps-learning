@@ -145,8 +145,11 @@ Load Balancer routing the refresh to a *different* server:
   4. Ran terraform plan to preview the infrastructure changes.
   5. Ran terraform apply to create the S3 bucket via code.
   6. Ran terraform destroy to safely tear down the infrastructure.
+  7. **Real-World Learning:** My CloudShell sesssion timed out, wiping the local '.tfstate' file. I learned that CloudShell is ephemeral and that production environments require a Remote Backend(like S3 + DynsmoDB) to persist the Terraform state file so infrastructure can be managed from any machine.
+  8. Manually cleaned up the S3 bucket via the AWS Console since the state file was lost.
 - *Key Learning:* Understood the core Terraform workflow (Init -> Plan -> Apply -> Destroy). Realized how IaC prevents human error and allows for version-controlled, repeatable infrastructure.
 
 ### Terraform Code & Execution Proof
-![Terraform Apply Success](terraform-success.png)
-![S3 Bucket Created](s3-bucket.png)
+![Terraform Apply Success](Terraform-Basics/terraform-success.png)
+![S3 Bucket Created](Terraform-Basics/s3-bucket.png)
+![Terraform Destroy](Terraform-Basics/terraform-terminal.png)
