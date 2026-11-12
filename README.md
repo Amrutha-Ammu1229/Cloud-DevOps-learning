@@ -131,3 +131,22 @@ Load Balancer routing traffic to one server:
 
 Load Balancer routing the refresh to a *different* server:
 ![Load Balancer Server 2](alb-load-balancing.png)
+
+
+## Project 11: Infrastructure as Code (Terraform Basics)
+
+- *Date:* 12/11/2026
+- *Goal:* Learn how to provision AWS resources using code instead of the Management Console.
+- 
+- *What I did:*
+  1. Used AWS CloudShell to write a main.tf configuration file.
+  2. *Troubleshooting:* Hit a "no space left on device" error during terraform init because the CloudShell home directory has a 1GB limit. Fixed it by moving the working directory to /tmp (which has 10GB of space).
+  3. Successfully ran terraform init to download the AWS provider.
+  4. Ran terraform plan to preview the infrastructure changes.
+  5. Ran terraform apply to create the S3 bucket via code.
+  6. Ran terraform destroy to safely tear down the infrastructure.
+- *Key Learning:* Understood the core Terraform workflow (Init -> Plan -> Apply -> Destroy). Realized how IaC prevents human error and allows for version-controlled, repeatable infrastructure.
+
+### Terraform Code & Execution Proof
+![Terraform Apply Success](terraform-success.png)
+![S3 Bucket Created](s3-bucket.png)
