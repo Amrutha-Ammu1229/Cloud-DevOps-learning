@@ -151,5 +151,7 @@ Load Balancer routing the refresh to a *different* server:
 
 ### Terraform Code & Execution Proof
 ![Terraform Apply Success](Terraform-Basics/terraform-success.png)
+
 ![S3 Bucket Created](Terraform-Basics/s3-bucket.png)
+
 ![Terraform Destroy](Terraform-Basics/terraform-terminal.png)
