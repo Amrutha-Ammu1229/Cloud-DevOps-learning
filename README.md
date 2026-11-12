@@ -106,6 +106,7 @@ Learning Linux, Git, cloud computing and DevOps through hands-on projects.
   4. Encountered a CIDR overlap error while creating the second subnet; fixed it by assigning a new CIDR block (10.0.3.0/24) to the private subnet.
   5. Set *Public access to "No"* and attached a new security group, ensuring the database cannot be reached from the internet.
   6. Deleted the database immediately after verifying the configuration to avoid charges.
+     
 - *Key Learning:* Learned why databases must be isolated in private subnets and how RDS uses DB Subnet Groups to span multiple Availability Zones for high availability.
 
 ### RDS Configuration Screenshot
@@ -123,6 +124,7 @@ Learning Linux, Git, cloud computing and DevOps through hands-on projects.
   3. Created an Auto Scaling Group (min 1, max 4) attached to the ALB.
   4. Verified load balancing by refreshing the ALB DNS and observing the hostname change.
   5. *Troubleshooting:* Encountered an "Unhealthy" target because the Auto Scaling Group placed an instance in the Private Subnet, which lacks a NAT Gateway to respond to health checks. Resolved by reconfiguring the Auto Scaling Group to use only the Public Subnet.
+    
 - *Key Learning:* Learned how to decouple architecture components. The Load Balancer acts as a single point of contact for users, while the Auto Scaling Group ensures server capacity adapts automatically.
 
 ### Proof of High Availability
@@ -147,6 +149,7 @@ Load Balancer routing the refresh to a *different* server:
   6. Ran terraform destroy to safely tear down the infrastructure.
   7. **Real-World Learning:** My CloudShell sesssion timed out, wiping the local '.tfstate' file. I learned that CloudShell is ephemeral and that production environments require a Remote Backend(like S3 + DynsmoDB) to persist the Terraform state file so infrastructure can be managed from any machine.
   8. Manually cleaned up the S3 bucket via the AWS Console since the state file was lost.
+     
 - *Key Learning:* Understood the core Terraform workflow (Init -> Plan -> Apply -> Destroy). Realized how IaC prevents human error and allows for version-controlled, repeatable infrastructure.
 
 ### Terraform Code & Execution Proof
@@ -159,3 +162,20 @@ S3 bucket created successfully:
 
 Session Timed out terminal:
 ![Terraform Destroy](Terraform-Basics/terraform-terminal.png)
+
+
+## Project 12: Docker Fundamentals
+
+- *Date:* 12/11/2026
+- *Goal:* Understand containerization by building a Docker image for a Python application and running it as a container.
+  
+- *What I did:*
+  1. Created a simple Python HTTP server (app.py).
+  2. Wrote a Dockerfile defining the base image (python:3.9-slim), working directory, copied files, and startup command.
+  3. *Troubleshooting:* Encountered a dockerfile parse error because of a missing space in WORKDIR /app. Fixed the syntax and successfully built the image using docker build.
+  4. Ran the container in detached mode using docker run -d -p 8080:8080.
+  5. Verified the application was running inside the container using curl to hit port 8080.
+  6. Cleaned up by stopping and removing the container.
+  
+- *Key Learning:* Learned how Docker solves the "it works on my machine" problem by packaging the application and its environment together. Understood the difference between an image (the blueprint) and a container (the running instance).
+![Docker image](dockerfile.png)
