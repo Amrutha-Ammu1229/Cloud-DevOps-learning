@@ -150,8 +150,12 @@ Load Balancer routing the refresh to a *different* server:
 - *Key Learning:* Understood the core Terraform workflow (Init -> Plan -> Apply -> Destroy). Realized how IaC prevents human error and allows for version-controlled, repeatable infrastructure.
 
 ### Terraform Code & Execution Proof
+
+Terraform Apply Success:
 ![Terraform Apply Success](Terraform-Basics/terraform-success.png)
 
+S3 bucket created successfully:
 ![S3 Bucket Created](Terraform-Basics/s3-bucket.png)
 
+Session Timed out terminal:
 ![Terraform Destroy](Terraform-Basics/terraform-terminal.png)
