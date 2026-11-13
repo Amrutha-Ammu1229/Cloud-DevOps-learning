@@ -185,7 +185,7 @@ Session Timed out terminal:
 
 - **Date:** 13/11/2026
 - **Goal:** Automate the end-to-end deployment of a containerized web application using Infrastructure as Code.
-- 
+  
 - **What I did:**
   1. Wrote a Terraform configuration (`main.tf`) to provision an EC2 instance, Security Group, and Key Pair.
   2. **Troubleshooting:** Ran into a VPC mismatch error because the default Security Group didn't match the custom Subnet. Fixed it by explicitly defining the `vpc_id` in the Terraform code.
