@@ -1,3 +1,9 @@
+yaml
+
+- name: Test SSH Connectivity
+  run: |
+    nc -zv ${{ secrets.EC2_HOST }} 22
+        
 name: Deploy to EC2
 
 on:
