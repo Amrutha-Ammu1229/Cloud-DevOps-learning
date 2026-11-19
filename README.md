@@ -214,3 +214,23 @@ Session Timed out terminal:
 
 ### Nginx Proof
 ![Nginx Working](nginx-docker-proof.png)
+
+
+## Project 15: Full CI/CD Pipeline (GitHub Actions -> AWS EC2 -> Docker)
+
+- **Date:** 19/11/2026
+- **Goal:** Build an automated CI/CD pipeline that deploys a containerized web app to an EC2 server on every code push.
+- 
+- **What I did:**
+  1. Created a custom `index.html` and a `Dockerfile` (using Nginx base image) in a `cicd-project` folder.
+  2. Launched an EC2 instance and manually installed Docker.
+  3. Stored the EC2 IP and `.pem` SSH key securely as GitHub Repository Secrets.
+  4. Wrote a GitHub Actions workflow (`.github/workflows/deploy.yml`) using `appleboy/scp-action` and `appleboy/ssh-action`.
+  5. **Troubleshooting:** The pipeline failed twice. First, a YAML syntax error (accidentally typed `yaml` at the top of the file). Second, a Dockerfile parse error (accidentally typed `dockerfile` at the top of the file). I read the GitHub Actions logs, identified the typos, and fixed them.
+  6. Successfully triggered the pipeline, watched it copy files to the server, build the Docker image, and run the container.
+  7. Verified the live website by visiting the EC2 Public IP.
+- **Key Learning:** Learned how to securely connect GitHub to AWS using Secrets. Gained hands-on experience reading CI/CD logs to troubleshoot pipeline failures and realized how automation eliminates manual deployment errors.
+
+### CI/CD Pipeline Proof
+![GitHub Actions Success](cicd-success.png)
+![Website Live](cicd-website.png)
