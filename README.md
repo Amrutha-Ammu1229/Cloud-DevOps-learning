@@ -195,3 +195,22 @@ Session Timed out terminal:
   6. Terminated the EC2 instance via the console to clean up.
     
 - **Key Learning:** Learned how to chain infrastructure provisioning with application deployment using Terraform. Gained deep experience in debugging VPC networking, Security Groups, and cloud-init scripts.
+
+
+## Project 14: Manual Docker Deployment (EC2 + User Data)
+
+- **Date:** 19/11/2026
+- **Goal:** Deploy a containerized Nginx web server on an EC2 instance using automated boot scripts (User Data).
+- 
+- **What I did:**
+  1. Launched an Amazon Linux EC2 instance manually via the AWS Console.
+  2. Wrote a Bash `User Data` script to update the OS, install Docker, start the Docker service, and add the `ec2-user` to the Docker group.
+  3. Connected to the instance via SSH using AWS CloudShell.
+  4. Ran a containerized Nginx image (`docker run -d -p 80:80 nginx`).
+  5. Verified the deployment by accessing the EC2 Public IP and seeing the Nginx default page.
+  6. Terminated the instance to clean up.
+  7. 
+- **Key Learning:** Learned how to automate server configuration at boot time using User Data. This project solidified my understanding of how EC2 instances and Docker containers interact, proving I can deploy applications without relying on heavier orchestration tools like Terraform.
+
+### Nginx Proof
+![Nginx Working](nginx-docker-proof.png)
