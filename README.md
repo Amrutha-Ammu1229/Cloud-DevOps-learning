@@ -234,3 +234,17 @@ Session Timed out terminal:
 ### CI/CD Pipeline Proof
 ![GitHub Actions Success](cicd-success.png)
 ![Website Live](cicd-website.png)
+
+## Project 16: Terraform Remote State & Locking
+
+- **Date:** 20/11/2026
+- **Goal:** Implement enterprise-grade state management for Terraform by storing the state file remotely and enabling state locking.
+- 
+- **What I did:**
+  1. Manually created an S3 bucket to store the `terraform.tfstate` file and a DynamoDB table (`LockID`) to handle state locking.
+  2. Configured the `backend "s3"` block inside the Terraform configuration.
+  3. Ran `terraform init` and verified it successfully connected to the remote backend.
+  4. Ran `terraform apply` to create a test S3 bucket.
+  5. Verified the `terraform.tfstate` file was automatically generated inside the remote S3 bucket (not locally).
+  6. Ran `terraform destroy` to clean up.
+- **Key Learning:** Learned the "chicken and egg" problem of Terraform backends (having to create the S3/DynamoDB resources manually before configuring them). Understood how state locking prevents multiple engineers from modifying infrastructure simultaneously, avoiding corruption.
